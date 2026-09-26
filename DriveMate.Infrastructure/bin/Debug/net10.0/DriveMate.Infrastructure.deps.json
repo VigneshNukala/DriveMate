@@ -1,0 +1,56 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "DriveMate.Infrastructure/1.0.0": {
+        "dependencies": {
+          "DriveMate.Application": "1.0.0",
+          "DriveMate.Domain": "1.0.0"
+        },
+        "runtime": {
+          "DriveMate.Infrastructure.dll": {}
+        }
+      },
+      "DriveMate.Application/1.0.0": {
+        "dependencies": {
+          "DriveMate.Domain": "1.0.0"
+        },
+        "runtime": {
+          "DriveMate.Application.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "DriveMate.Domain/1.0.0": {
+        "runtime": {
+          "DriveMate.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "DriveMate.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DriveMate.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DriveMate.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

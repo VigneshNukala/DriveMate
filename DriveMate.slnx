@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="DriveMate.Application/DriveMate.Application.csproj" />
+  <Project Path="DriveMate.Domain/DriveMate.Domain.csproj" />
+  <Project Path="DriveMate.Infrastructure/DriveMate.Infrastructure.csproj" />
+  <Project Path="DriveMate.Server/DriveMate.Server.csproj" />
+</Solution>
