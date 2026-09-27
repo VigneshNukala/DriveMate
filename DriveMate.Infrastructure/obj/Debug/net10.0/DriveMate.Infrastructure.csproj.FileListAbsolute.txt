@@ -10,6 +10,7 @@
 /Users/vigneshnukala/DriveMate/DriveMate.Infrastructure/obj/Debug/net10.0/DriveMate.Infrastructure.AssemblyInfoInputs.cache
 /Users/vigneshnukala/DriveMate/DriveMate.Infrastructure/obj/Debug/net10.0/DriveMate.Infrastructure.AssemblyInfo.cs
 /Users/vigneshnukala/DriveMate/DriveMate.Infrastructure/obj/Debug/net10.0/DriveMate.Infrastructure.csproj.CoreCompileInputs.cache
+/Users/vigneshnukala/DriveMate/DriveMate.Infrastructure/obj/Debug/net10.0/DriveMate.Infrastructure.sourcelink.json
 /Users/vigneshnukala/DriveMate/DriveMate.Infrastructure/obj/Debug/net10.0/DriveMat.073FA253.Up2Date
 /Users/vigneshnukala/DriveMate/DriveMate.Infrastructure/obj/Debug/net10.0/DriveMate.Infrastructure.dll
 /Users/vigneshnukala/DriveMate/DriveMate.Infrastructure/obj/Debug/net10.0/refint/DriveMate.Infrastructure.dll

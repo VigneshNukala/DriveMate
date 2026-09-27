@@ -49,6 +49,16 @@
         "net10.0": {
           "framework": "net10.0",
           "targetAlias": "net10.0",
+          "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.2.0, )"
+            },
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.1.89, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -726,6 +736,28 @@
         "net10.0": {
           "framework": "net10.0",
           "targetAlias": "net10.0",
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.1.89, )"
+            },
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[10.0.12, )"
+            },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[8.23.0, )"
+            },
+            "Npgsql": {
+              "target": "Package",
+              "version": "[10.0.3, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[8.23.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -1046,6 +1078,9 @@
               "/Users/vigneshnukala/DriveMate/DriveMate.Application/DriveMate.Application.csproj": {
                 "projectPath": "/Users/vigneshnukala/DriveMate/DriveMate.Application/DriveMate.Application.csproj"
               },
+              "/Users/vigneshnukala/DriveMate/DriveMate.Domain/DriveMate.Domain.csproj": {
+                "projectPath": "/Users/vigneshnukala/DriveMate/DriveMate.Domain/DriveMate.Domain.csproj"
+              },
               "/Users/vigneshnukala/DriveMate/DriveMate.Infrastructure/DriveMate.Infrastructure.csproj": {
                 "projectPath": "/Users/vigneshnukala/DriveMate/DriveMate.Infrastructure/DriveMate.Infrastructure.csproj"
               }
@@ -1069,6 +1104,14 @@
           "framework": "net10.0",
           "targetAlias": "net10.0",
           "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.1.89, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[10.0.12, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[10.0.12, )"

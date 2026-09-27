@@ -1,18 +1,32 @@
+using Dapper;
+using DriveMate.Application.Interfaces.IDatabase;
 using Microsoft.AspNetCore.Mvc;
 
-namespace DriverServicePlatform.Server.Controllers;
+namespace DriveMate.Server.Controllers;
 
 [ApiController]
-[Route("api/[controller]")]
+[Route("api/health")]
 public class HealthController : ControllerBase
 {
-    [HttpGet]
-    public IActionResult Get()
+    private readonly IDbConnectionFactory _connectionFactory;
+
+    public HealthController(IDbConnectionFactory connectionFactory)
     {
+        _connectionFactory = connectionFactory;
+    }
+
+    [HttpGet("database")]
+    public async Task<IActionResult> Database()
+    {
+        using var connection = _connectionFactory.CreateConnection();
+
+        var result = await connection.ExecuteScalarAsync<int>(
+            "SELECT 1;");
+
         return Ok(new
         {
-            status = "OK",
-            message = "Driver Service Platform API is running"
+            status = "Database connected",
+            result
         });
     }
 }

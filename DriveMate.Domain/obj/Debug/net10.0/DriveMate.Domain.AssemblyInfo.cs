@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DriveMate.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0aa98498a5394c78bc2c33ac6b3d237f6690f845")]
 [assembly: System.Reflection.AssemblyProductAttribute("DriveMate.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DriveMate.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
