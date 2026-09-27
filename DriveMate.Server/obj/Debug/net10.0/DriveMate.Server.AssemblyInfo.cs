@@ -10,10 +10,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("bfe28f68-d7ed-491f-a45a-fd9173f00c25")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("DriveMate.Server")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0aa98498a5394c78bc2c33ac6b3d237f6690f845")]
 [assembly: System.Reflection.AssemblyProductAttribute("DriveMate.Server")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DriveMate.Server")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -5,6 +5,7 @@
 /Users/vigneshnukala/DriveMate/DriveMate.Domain/obj/Debug/net10.0/DriveMate.Domain.AssemblyInfoInputs.cache
 /Users/vigneshnukala/DriveMate/DriveMate.Domain/obj/Debug/net10.0/DriveMate.Domain.AssemblyInfo.cs
 /Users/vigneshnukala/DriveMate/DriveMate.Domain/obj/Debug/net10.0/DriveMate.Domain.csproj.CoreCompileInputs.cache
+/Users/vigneshnukala/DriveMate/DriveMate.Domain/obj/Debug/net10.0/DriveMate.Domain.sourcelink.json
 /Users/vigneshnukala/DriveMate/DriveMate.Domain/obj/Debug/net10.0/DriveMate.Domain.dll
 /Users/vigneshnukala/DriveMate/DriveMate.Domain/obj/Debug/net10.0/refint/DriveMate.Domain.dll
 /Users/vigneshnukala/DriveMate/DriveMate.Domain/obj/Debug/net10.0/DriveMate.Domain.pdb

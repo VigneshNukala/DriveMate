@@ -1,18 +1,22 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>bfe28f68-d7ed-491f-a45a-fd9173f00c25</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.1.89" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="10.0.12" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.12" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\DriveMate.Application\DriveMate.Application.csproj" />
     <ProjectReference Include="..\DriveMate.Infrastructure\DriveMate.Infrastructure.csproj" />
+    <ProjectReference Include="..\DriveMate.Domain\DriveMate.Domain.csproj" />
   </ItemGroup>
 
 </Project>
