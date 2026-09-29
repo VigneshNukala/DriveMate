@@ -1,0 +1,39 @@
+<div class="dashboard-page">
+  <header class="dashboard-header">
+    <div>
+      <h1>DriveMate</h1>
+      <p>Customer Dashboard</p>
+    </div>
+
+    <div class="header-actions">
+      <button type="button" class="profile-button" (click)="goToProfile()">Profile</button>
+
+      <button type="button" class="logout-button" (click)="logout()">Logout</button>
+    </div>
+  </header>
+
+  <main class="dashboard-content">
+    <section class="welcome-section">
+      <h2>Welcome to DriveMate</h2>
+      <p>Book a professional driver to drive your car safely and conveniently.</p>
+    </section>
+
+    <section class="dashboard-actions">
+      <div class="action-card">
+        <h3>Request a Driver</h3>
+
+        <p>Need a driver for your car? Create a new driver request.</p>
+
+        <button type="button" (click)="requestDriver()">Request Driver</button>
+      </div>
+
+      <div class="action-card">
+        <h3>My Requests</h3>
+
+        <p>View and manage your existing driver requests.</p>
+
+        <button type="button" (click)="viewRequests()">View Requests</button>
+      </div>
+    </section>
+  </main>
+</div>

@@ -1,3 +1,5 @@
+using System;
+using System.Threading.Tasks;
 using DriveMate.Application.DTOs.Authentication;
 using DriveMate.Application.Interfaces.IRepositories;
 using DriveMate.Application.Interfaces.Services;
@@ -21,6 +23,13 @@ public class AuthService : IAuthService
     public async Task<AuthResponse> RegisterAsync(RegisterRequest request)
     {
 
+        
+        var role = request.Role.Trim();
+        if (role != "Customer" && role != "Driver")
+        {
+            throw new InvalidOperationException("Invalid registration role.");
+        }
+
         var email = request.Email.Trim().ToLowerInvariant();
         // 1. Check if email already exists
         var existingUser = await _userRepository.GetByEmailAsync(email);
@@ -42,7 +51,7 @@ public class AuthService : IAuthService
             Email = email,
             PhoneNumber = request.PhoneNumber?.Trim(),
             PasswordHash = passwordHash,
-            Role = "User",
+            Role = role,
             IsActive = true,
             CreatedAt = DateTime.UtcNow
         };
@@ -67,8 +76,7 @@ public class AuthService : IAuthService
         };
     }
 
-    public async Task<AuthResponse> LoginAsync(
-        LoginRequest request)
+    public async Task<AuthResponse> LoginAsync(LoginRequest request)
     {
         // 1. Find user
         var user =

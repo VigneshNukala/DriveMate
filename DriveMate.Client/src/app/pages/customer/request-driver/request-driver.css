@@ -1,0 +1,142 @@
+.request-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  background: #ffffff;
+  padding: 40px 24px;
+}
+
+.request-card {
+  width: 100%;
+  max-width: 650px;
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+}
+
+.request-header {
+  margin-bottom: 30px;
+}
+
+.request-header h1 {
+  margin: 18px 0 8px;
+  font-size: 28px;
+  color: #000000;
+}
+
+.request-header p {
+  margin: 0;
+  color: #666666;
+}
+
+.back-button {
+  border: none;
+  background: none;
+  padding: 0;
+  color: #000000;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #000000;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 14px;
+  border: 1px solid #d6d6d6;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+  background: #ffffff;
+  color: #000000;
+  font-family: inherit;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #000000;
+}
+
+.form-group small {
+  display: block;
+  margin-top: 6px;
+  color: #000000;
+  font-size: 12px;
+}
+
+button[type='submit'] {
+  width: 100%;
+  padding: 13px;
+  border: none;
+  border-radius: 8px;
+  background: #000000;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button[type='submit']:hover {
+  background: #222222;
+}
+
+button[type='submit']:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.error-message,
+.success-message {
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.error-message {
+  background: #f5f5f5;
+  color: #000000;
+  border: 1px solid #d0d0d0;
+}
+
+.success-message {
+  background: #f5f5f5;
+  color: #000000;
+  border: 1px solid #bdbdbd;
+}
+
+@media (max-width: 600px) {
+  .request-card {
+    padding: 28px 20px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}

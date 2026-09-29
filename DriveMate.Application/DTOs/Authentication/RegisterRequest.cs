@@ -25,4 +25,7 @@ public class RegisterRequest
     [Required]
     [StrongPassword]
     public string Password { get; set; } = string.Empty;
+
+    [Required]
+    public string Role { get; set; } = string.Empty;
 }

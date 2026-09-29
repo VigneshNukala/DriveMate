@@ -1,0 +1,96 @@
+<div class="requests-page">
+  <div class="requests-container">
+    <header class="requests-header">
+      <div>
+        <button type="button" class="back-button" (click)="goBack()">← Back</button>
+
+        <h1>My Requests</h1>
+
+        <p>View and manage your driver requests.</p>
+      </div>
+
+      <button type="button" class="request-button" (click)="requestDriver()">Request Driver</button>
+    </header>
+
+    @if (isLoading) {
+      <div class="state-message">Loading your requests...</div>
+    }
+
+    @if (errorMessage) {
+      <div class="state-message error">
+        {{ errorMessage }}
+      </div>
+    }
+
+    @if (!isLoading && !errorMessage && requests.length === 0) {
+      <div class="empty-state">
+        <h2>No requests yet</h2>
+
+        <p>You haven't created any driver requests yet.</p>
+
+        <button type="button" class="request-button" (click)="requestDriver()">
+          Request a Driver
+        </button>
+      </div>
+    }
+
+    @if (!isLoading && requests.length > 0) {
+      <section class="requests-list">
+        @for (request of requests; track request.id) {
+          <article class="request-card">
+            <div class="request-card-header">
+              <div>
+                <h2>
+                  {{ request.pickupLocation }}
+                </h2>
+
+                @if (request.dropLocation) {
+                  <p class="route">→ {{ request.dropLocation }}</p>
+                }
+              </div>
+
+              <span
+                class="status"
+                [class.pending]="request.status === 'Pending'"
+                [class.accepted]="request.status === 'Accepted'"
+                [class.rejected]="request.status === 'Rejected'"
+                [class.cancelled]="request.status === 'Cancelled'"
+                [class.completed]="request.status === 'Completed'"
+              >
+                {{ request.status }}
+              </span>
+            </div>
+
+            <div class="request-details">
+              <div class="detail">
+                <span class="label">Date</span>
+                <span>
+                  {{ request.serviceDate }}
+                </span>
+              </div>
+
+              <div class="detail">
+                <span class="label">Start Time</span>
+                <span>
+                  {{ request.startTime }}
+                </span>
+              </div>
+
+              <div class="detail">
+                <span class="label">Duration</span>
+                <span> {{ request.durationHours }} hours </span>
+              </div>
+            </div>
+
+            @if (request.notes) {
+              <div class="notes">
+                <span class="label">Notes</span>
+                <p>{{ request.notes }}</p>
+              </div>
+            }
+          </article>
+        }
+      </section>
+    }
+  </div>
+</div>

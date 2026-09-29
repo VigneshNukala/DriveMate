@@ -32,6 +32,8 @@ export class Register {
 
       phoneNumber: ['', [Validators.maxLength(20)]],
 
+      role: ['Customer', Validators.required],
+
       password: [
         '',
         [
@@ -69,10 +71,12 @@ export class Register {
         email: formValue.email,
         phoneNumber: formValue.phoneNumber || undefined,
         password: formValue.password,
+        role: formValue.role,
       })
       .subscribe({
         next: () => {
           this.isLoading = false;
+
           this.successMessage = 'Registration successful. Redirecting to login...';
 
           setTimeout(() => {
@@ -82,6 +86,7 @@ export class Register {
 
         error: (error) => {
           this.isLoading = false;
+
           this.errorMessage = this.getErrorMessage(error);
 
           if (error.status === 409) {

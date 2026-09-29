@@ -1,0 +1,124 @@
+<div class="requests-page">
+  <div class="requests-container">
+    <header class="requests-header">
+      <div>
+        <button type="button" class="back-button" (click)="goBack()">← Back</button>
+
+        <h1>Driver Requests</h1>
+
+        <p>View available customer requests and choose the ones you want to accept.</p>
+      </div>
+
+      <button type="button" class="refresh-button" (click)="loadRequests()" [disabled]="isLoading">
+        Refresh
+      </button>
+    </header>
+
+    @if (errorMessage) {
+      <div class="message error">
+        {{ errorMessage }}
+      </div>
+    }
+
+    @if (successMessage) {
+      <div class="message success">
+        {{ successMessage }}
+      </div>
+    }
+
+    @if (isLoading) {
+      <div class="state-message">Loading requests...</div>
+    }
+
+    @if (!isLoading && !errorMessage && requests.length === 0) {
+      <div class="empty-state">
+        <h2>No pending requests</h2>
+
+        <p>There are currently no customer requests available.</p>
+      </div>
+    }
+
+    @if (!isLoading && requests.length > 0) {
+      <section class="requests-list">
+        @for (request of requests; track request.id) {
+          <article class="request-card">
+            <div class="request-card-header">
+              <div>
+                <span class="request-label"> Customer Request </span>
+
+                <h2>
+                  {{ request.pickupLocation }}
+                </h2>
+
+                @if (request.dropLocation) {
+                  <p class="route">→ {{ request.dropLocation }}</p>
+                }
+              </div>
+
+              <span class="status">
+                {{ request.status }}
+              </span>
+            </div>
+
+            <div class="request-details">
+              <div class="detail">
+                <span class="label"> Date </span>
+
+                <span>
+                  {{ request.serviceDate }}
+                </span>
+              </div>
+
+              <div class="detail">
+                <span class="label"> Start Time </span>
+
+                <span>
+                  {{ request.startTime }}
+                </span>
+              </div>
+
+              <div class="detail">
+                <span class="label"> Duration </span>
+
+                <span>
+                  {{ request.durationHours }}
+                  hours
+                </span>
+              </div>
+            </div>
+
+            @if (request.notes) {
+              <div class="notes">
+                <span class="label"> Notes </span>
+
+                <p>
+                  {{ request.notes }}
+                </p>
+              </div>
+            }
+
+            <div class="request-actions">
+              <button
+                type="button"
+                class="reject-button"
+                [disabled]="processingRequestId === request.id"
+                (click)="rejectRequest(request.id)"
+              >
+                {{ processingRequestId === request.id ? 'Processing...' : 'Reject' }}
+              </button>
+
+              <button
+                type="button"
+                class="accept-button"
+                [disabled]="processingRequestId === request.id"
+                (click)="acceptRequest(request.id)"
+              >
+                {{ processingRequestId === request.id ? 'Processing...' : 'Accept' }}
+              </button>
+            </div>
+          </article>
+        }
+      </section>
+    }
+  </div>
+</div>

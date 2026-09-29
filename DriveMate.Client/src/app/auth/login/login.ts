@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -12,23 +12,19 @@ import { AuthService } from '../../core/services/auth.service';
   styleUrl: './login.css',
 })
 export class Login {
+  private readonly fb = inject(FormBuilder);
+  private readonly authService = inject(AuthService);
+  private readonly router = inject(Router);
+
   isLoading = false;
   errorMessage = '';
 
-  loginForm;
+  loginForm = this.fb.nonNullable.group({
+    email: ['', [Validators.required, Validators.email]],
+    password: ['', Validators.required],
+  });
 
-  constructor(
-    private readonly fb: FormBuilder,
-    private readonly authService: AuthService,
-    private readonly router: Router,
-  ) {
-    this.loginForm = this.fb.nonNullable.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required],
-    });
-  }
-
-  submit(): void {
+  onSubmit(): void {
     if (this.loginForm.invalid) {
       this.loginForm.markAllAsTouched();
       return;
@@ -38,15 +34,27 @@ export class Login {
     this.errorMessage = '';
 
     this.authService.login(this.loginForm.getRawValue()).subscribe({
-      next: () => {
+      next: (response) => {
         this.isLoading = false;
-        this.router.navigate(['/home']);
+
+        if (response.role === 'Customer') {
+          this.router.navigate(['/customer']);
+          return;
+        }
+
+        if (response.role === 'Driver') {
+          this.router.navigate(['/driver']);
+          return;
+        }
+
+        this.errorMessage = 'Invalid account role.';
       },
 
       error: (error) => {
         this.isLoading = false;
 
-        this.errorMessage = error?.error?.message ?? 'Login failed. Please try again.';
+        this.errorMessage =
+          error?.error?.message ?? 'Unable to login. Please check your email and password.';
       },
     });
   }

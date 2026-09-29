@@ -3,6 +3,7 @@ using System.Text;
 using DriveMate.Application.Interfaces.IDatabase;
 using DriveMate.Application.Interfaces.IRepositories;
 using DriveMate.Application.Interfaces.Services;
+using DriveMate.Application.Repositories;
 using DriveMate.Application.Services;
 
 using DriveMate.Infrastructure.Authentication;
@@ -41,8 +42,7 @@ var jwtAudience =
 
 
 builder.Services
-    .AddAuthentication(
-        JwtBearerDefaults.AuthenticationScheme)
+    .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
         options.TokenValidationParameters =
@@ -73,10 +73,12 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddScoped<IDbConnectionFactory, DbConnectionFactory>();
 
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IDriverRequestRepository, DriverRequestRepository>();
 
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IJwtTokenService, JwtTokenService>();
-
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IDriverRequestService, DriverRequestService>();
 
 var app = builder.Build();
 

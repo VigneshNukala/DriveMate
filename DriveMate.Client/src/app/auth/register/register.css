@@ -62,6 +62,23 @@
   color: #000000;
 }
 
+.form-group select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 14px;
+  border: 1px solid #d6d6d6;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+  background: #ffffff;
+  color: #000000;
+  cursor: pointer;
+}
+
+.form-group select:focus {
+  border-color: #000000;
+}
+
 .form-group input:focus {
   border-color: #000000;
 }
