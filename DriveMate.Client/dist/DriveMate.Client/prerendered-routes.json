@@ -1,7 +1,9 @@
 {
   "routes": {
-    "/home": {},
+    "/customer": {},
+    "/driver": {},
     "/login": {},
+    "/profile": {},
     "/register": {}
   }
 }

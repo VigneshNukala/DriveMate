@@ -42,9 +42,11 @@
         <label for="email"> Email </label>
 
         <input id="email" type="email" formControlName="email" placeholder="Enter your email" />
+
         @if (registerForm.controls.email.hasError('emailExists')) {
           <small> An account with this email already exists. </small>
         }
+
         @if (registerForm.controls.email.touched && registerForm.controls.email.invalid) {
           <small> Please enter a valid email address. </small>
         }
@@ -59,6 +61,20 @@
           formControlName="phoneNumber"
           placeholder="Enter your phone number"
         />
+      </div>
+
+      <div class="form-group">
+        <label for="role"> Register as </label>
+
+        <select id="role" formControlName="role">
+          <option value="Customer">Customer</option>
+
+          <option value="Driver">Driver</option>
+        </select>
+
+        @if (registerForm.controls.role.touched && registerForm.controls.role.invalid) {
+          <small> Please select how you want to use DriveMate. </small>
+        }
       </div>
 
       <div class="form-group">

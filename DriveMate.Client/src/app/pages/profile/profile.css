@@ -1,0 +1,196 @@
+.profile-page {
+  min-height: 100vh;
+  background: #ffffff;
+  color: #000000;
+  padding: 48px 24px;
+}
+
+.profile-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.profile-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+h1 {
+  margin: 0;
+  font-size: 36px;
+  line-height: 1.1;
+}
+
+.subtitle {
+  margin: 10px 0 0;
+  color: #555555;
+}
+
+.profile-card {
+  display: flex;
+  gap: 40px;
+  padding: 40px;
+  border: 1px solid #000000;
+  background: #ffffff;
+}
+
+.avatar {
+  width: 88px;
+  height: 88px;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #000000;
+  color: #ffffff;
+
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.profile-details {
+  flex: 1;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px 32px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+label {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.value {
+  min-height: 22px;
+  font-size: 16px;
+}
+
+.value.muted {
+  color: #555555;
+}
+
+input {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 12px 14px;
+
+  border: 1px solid #000000;
+  background: #ffffff;
+  color: #000000;
+
+  font-size: 15px;
+  outline: none;
+}
+
+input:focus {
+  box-shadow: 0 0 0 2px #000000;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid #dddddd;
+}
+
+.button {
+  padding: 12px 20px;
+  border: 1px solid #000000;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.button-primary {
+  background: #000000;
+  color: #ffffff;
+}
+
+.button-secondary {
+  background: #ffffff;
+  color: #000000;
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.message {
+  padding: 14px 16px;
+  margin-bottom: 20px;
+  border: 1px solid #000000;
+}
+
+.message.success {
+  background: #000000;
+  color: #ffffff;
+}
+
+.message.error {
+  background: #ffffff;
+  color: #000000;
+}
+
+.state-message {
+  padding: 40px;
+  border: 1px solid #000000;
+  text-align: center;
+}
+
+.state-message.error {
+  text-align: left;
+}
+
+@media (max-width: 700px) {
+
+  .profile-page {
+    padding: 32px 16px;
+  }
+
+  .profile-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .profile-card {
+    flex-direction: column;
+    padding: 24px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .actions {
+    flex-direction: column-reverse;
+  }
+
+  .button {
+    width: 100%;
+  }
+}

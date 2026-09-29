@@ -1,12 +1,8 @@
 <div class="auth-page">
-
   <div class="auth-card">
-
     <h1>Welcome Back</h1>
 
-    <p class="subtitle">
-      Sign in to your DriveMate account
-    </p>
+    <p class="subtitle">Sign in to your DriveMate account</p>
 
     @if (errorMessage) {
       <div class="error-message">
@@ -14,40 +10,19 @@
       </div>
     }
 
-    <form
-      [formGroup]="loginForm"
-      (ngSubmit)="submit()">
-
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
+        <label for="email"> Email </label>
 
-        <label for="email">
-          Email
-        </label>
+        <input id="email" type="email" formControlName="email" placeholder="Enter your email" />
 
-        <input
-          id="email"
-          type="email"
-          formControlName="email"
-          placeholder="Enter your email"
-        />
-
-        @if (
-          loginForm.controls.email.touched &&
-          loginForm.controls.email.invalid
-        ) {
-          <small>
-            Please enter a valid email.
-          </small>
+        @if (loginForm.controls.email.touched && loginForm.controls.email.invalid) {
+          <small> Please enter a valid email. </small>
         }
-
       </div>
 
-
       <div class="form-group">
-
-        <label for="password">
-          Password
-        </label>
+        <label for="password"> Password </label>
 
         <input
           id="password"
@@ -56,32 +31,18 @@
           placeholder="Enter your password"
         />
 
-        @if (
-          loginForm.controls.password.touched &&
-          loginForm.controls.password.invalid
-        ) {
-          <small>
-            Password is required.
-          </small>
+        @if (loginForm.controls.password.touched && loginForm.controls.password.invalid) {
+          <small> Password is required. </small>
         }
-
       </div>
 
-
-      <button
-        type="submit"
-        [disabled]="isLoading">
-
+      <button type="submit" [disabled]="isLoading">
         @if (isLoading) {
           Signing in...
         } @else {
           Sign In
         }
-
       </button>
-
     </form>
-
   </div>
-
 </div>
